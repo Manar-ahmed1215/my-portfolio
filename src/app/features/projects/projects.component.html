@@ -1,0 +1,69 @@
+<section id="projects" [ngClass]="bgClass()" class="py-20 px-6 transition-colors duration-500">
+
+  <div class="max-w-7xl mx-auto">
+    <h2 [ngClass]="titleClass()" class="text-4xl font-bold text-center mb-16 transition-colors relative">
+      MY Projects
+      <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 h-1 bg-indigo-500 rounded-full mt-1"></span>
+    </h2>
+
+    <div class="flex justify-center gap-4 mb-16 flex-wrap">
+      @for (cat of ['All', 'Website', 'Application', 'Design']; track cat) {
+      <button (click)="setFilter(cat)" [class.bg-indigo-600]="filter() === cat"
+        [class.bg-slate-800]="isDarkMode() && filter() !== cat" [class.bg-gray-300]="!isDarkMode() && filter() !== cat"
+        [class.text-white]="isDarkMode() || filter() === cat" [class.text-slate-800]="!isDarkMode() && filter() !== cat"
+        class="px-6 py-2 rounded-full transition-all hover:bg-indigo-700 hover:text-white">
+        {{cat}}
+      </button>
+      }
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (p of filteredProjects(); track p.title) {
+      <div [ngClass]="cardClass()" class="border rounded-3xl overflow-hidden hover:border-indigo-500 transition-all duration-300 flex flex-col relative group">
+
+        <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all duration-500 ease-out group-hover:w-full shadow-[0_0_12px_rgba(99,102,241,0.6)]"></span>
+        <a [href]="p.previewLink" target="_blank" class="h-64 w-full overflow-hidden block">
+          <img [src]="p.previewImage" [alt]="p.title"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-hover:rotate-1">
+        </a>
+
+        <div class="p-8 flex-grow">
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-4 py-1 bg-indigo-900/30 text-indigo-400 text-[10px] font-bold rounded-full uppercase">
+              {{p.category}}
+            </span>
+
+            <div class="flex gap-2">
+              <a [href]="p.githubLink" target="_blank"
+                class="p-2 bg-slate-800 text-white rounded-full hover:bg-indigo-600 hover:shadow-[0_0_10px_rgba(99,102,241,0.5)] transition-all duration-300 group-hover:scale-105">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a [href]="p.previewLink" target="_blank"
+                class="p-2 bg-slate-800 text-white rounded-full hover:bg-indigo-600 hover:shadow-[0_0_10px_rgba(99,102,241,0.5)] transition-all duration-300 group-hover:scale-105">
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </div>
+          </div>
+
+          <h3 [ngClass]="titleClass()" class="text-xl font-bold mb-2 transition-colors">
+            {{p.title}}
+          </h3>
+          <p [ngClass]="textMuted()" class="text-sm mb-6 transition-colors">
+            {{p.desc}}
+          </p>
+
+          <div class="flex flex-wrap gap-2 mt-auto">
+           @for (tag of p.tags; track tag) {
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 text-[10px] rounded-full transition-all duration-300 group-hover:scale-110 group-hover:bg-indigo-950 group-hover:text-indigo-300 group-hover:shadow-[0_0_8px_rgba(99,102,241,0.2)]">
+              {{tag}}
+            </span>
+            }
+          </div>
+        </div>
+      </div>
+      } @empty {
+      <p class="text-slate-500 text-center col-span-full">No projects found in this category.</p>
+      }
+    </div>
+  </div>
+</section>

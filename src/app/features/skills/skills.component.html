@@ -1,0 +1,90 @@
+<section id="skills" [ngClass]="bgClass()" class="py-24 px-4 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto w-full">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Skills & Technologies</h2>
+      <span class="block w-12 h-1 bg-indigo-500 rounded-full mx-auto mt-4"></span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="skill-card opacity-0 translate-y-10 transition-all duration-700 p-6 border rounded-2xl group hover:-translate-y-1" 
+           [ngClass]="cardClass()" [style.transition-delay]="'100ms'">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-500/5 group-hover:bg-indigo-500/10 transition-colors duration-300">
+            <i class="fa-brands fa-angular text-2xl text-red-500"></i>
+          </div>
+          <h3 class="text-lg font-bold">Angular 21</h3>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed">Signals, RxJS, SSR & CSR Architectures.</p>
+      </div>
+
+      <div class="skill-card opacity-0 translate-y-10 transition-all duration-700 p-6 border rounded-2xl group hover:-translate-y-1" 
+           [ngClass]="cardClass()" [style.transition-delay]="'200ms'">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-500/5 group-hover:bg-indigo-500/10 transition-colors duration-300">
+            <i class="fa-brands fa-square-js text-2xl text-yellow-500"></i>
+          </div>
+          <h3 class="text-lg font-bold">JavaScript</h3>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed">ES6+, DOM Manipulation, Async/Await & Closures.</p>
+      </div>
+
+      <div class="skill-card opacity-0 translate-y-10 transition-all duration-700 p-6 border rounded-2xl group hover:-translate-y-1" 
+           [ngClass]="cardClass()" [style.transition-delay]="'300ms'">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-500/5 group-hover:bg-indigo-500/10 transition-colors duration-300">
+            <i class="fa-solid fa-code text-2xl text-blue-500"></i>
+          </div>
+          <h3 class="text-lg font-bold">TypeScript</h3>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed">Strict Typing, Interfaces, and Clean OOP.</p>
+      </div>
+
+      <div class="skill-card opacity-0 translate-y-10 transition-all duration-700 p-6 border rounded-2xl group hover:-translate-y-1" 
+           [ngClass]="cardClass()" [style.transition-delay]="'400ms'">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-500/5 group-hover:bg-indigo-500/10 transition-colors duration-300">
+            <i class="fa-solid fa-wind text-2xl text-cyan-400"></i>
+          </div>
+          <h3 class="text-lg font-bold">Tailwind CSS</h3>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed">Utility-first styling & Responsive Design.</p>
+      </div>
+
+      <div class="skill-card opacity-0 translate-y-10 transition-all duration-700 p-6 border rounded-2xl group hover:-translate-y-1" 
+           [ngClass]="cardClass()" [style.transition-delay]="'500ms'">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-500/5 group-hover:bg-indigo-500/10 transition-colors duration-300">
+            <i class="fa-brands fa-bootstrap text-2xl text-purple-500"></i>
+          </div>
+          <h3 class="text-lg font-bold">Bootstrap</h3>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed">Fast prototyping & Grid systems.</p>
+      </div>
+
+      <div class="skill-card opacity-0 translate-y-10 transition-all duration-700 p-6 border rounded-2xl group hover:-translate-y-1" 
+           [ngClass]="cardClass()" [style.transition-delay]="'600ms'">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-500/5 group-hover:bg-indigo-500/10 transition-colors duration-300">
+            <i class="fa-solid fa-cloud-arrow-up text-2xl text-emerald-500"></i>
+          </div>
+          <h3 class="text-lg font-bold">REST APIs</h3>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed">HTTP Interceptors & Data Integration.</p>
+      </div>
+
+      <div class="skill-card opacity-0 translate-y-10 transition-all duration-700 p-6 border rounded-2xl group hover:-translate-y-1" 
+           [ngClass]="cardClass()" [style.transition-delay]="'700ms'">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-500/5 group-hover:bg-indigo-500/10 transition-colors duration-300">
+            <i class="fa-brands fa-figma text-2xl text-pink-500"></i>
+          </div>
+          <h3 class="text-lg font-bold">Figma to Code</h3>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed">Pixel-perfect UI implementation.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

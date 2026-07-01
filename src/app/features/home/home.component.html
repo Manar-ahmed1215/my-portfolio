@@ -1,0 +1,86 @@
+<section id="home" [ngClass]="bgClass()" class="min-h-screen flex items-center justify-center  px-4 overflow-hidden transition-colors duration-300">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+    
+    <div class="lg:col-span-5 flex justify-center order-last lg:order-first relative">
+      
+      <div [ngClass]="isDarkMode() ? 'bg-indigo-600/5 shadow-[0_0_100px_rgba(99,102,241,0.15)]' : 'bg-transparent'" class="absolute inset-0 rounded-full blur-3xl transform -translate-x-10 -translate-y-10 transition-colors duration-300"></div>
+      
+      <div class="relative w-72 h-72 sm:w-85 sm:h-85 rounded-full p-2 bg-gradient-to-tr from-indigo-600 via-purple-500 to-pink-500 shadow-[0_0_40px_rgba(99,102,241,0.25)] flex items-center justify-center animate-fade-in">
+        <div [ngClass]="imageCardClass()" class="w-full h-full rounded-full overflow-hidden border-4 transition-colors duration-300">
+          <img src="assets/manar.jpg" alt="Manar Ahmed" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <div [ngClass]="badgeClass()" class="absolute top-4 right-12 border p-3.5 rounded-2xl animate-bounce transition-all hover:scale-110 duration-300 flex items-center justify-center">
+        <i class="fa-brands fa-angular text-3xl text-red-500"></i>
+      </div>
+      
+      <div [ngClass]="badgeClass()" class="absolute top-1/2 -left-4 -translate-y-1/2 border p-3.5 rounded-2xl animate-pulse transition-all hover:scale-110 duration-300 flex items-center justify-center">
+        <i class="fa-solid fa-code text-2xl text-indigo-500"></i>
+      </div>
+
+      <div [ngClass]="badgeClass()" class="absolute bottom-4 right-16 border p-3.5 rounded-2xl animate-bounce [animation-delay:0.5s] transition-all hover:scale-110 duration-300 flex items-center justify-center">
+        <i class="fa-solid fa-wind text-2xl text-cyan-400"></i>
+      </div>
+
+      <div [ngClass]="badgeClass()" class="absolute bottom-1/4 left-4 border p-3.5 rounded-2xl transition-all hover:scale-110 duration-300 flex items-center justify-center">
+        <i class="fa-solid fa-font-awesome text-2xl text-amber-500"></i>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 flex flex-col items-start space-y-6 text-left">
+      
+      <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        Available for Freelance & Internships
+      </div>
+
+      <div class="space-y-2">
+        <p class="text-indigo-600 dark:text-indigo-400 font-medium text-lg flex items-center gap-2">
+          Hi there! <span class="animate-wave">👋</span> I am
+        </p>
+        <h1 [ngClass]="isDarkMode() ? 'text-white' : 'text-slate-900'" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight transition-colors duration-300">
+          Manar Ahmed
+        </h1>
+        
+        <div class="inline-flex items-center gap-2 mt-2 bg-indigo-600/10 border border-indigo-500/30 text-indigo-600 dark:text-indigo-400 px-4 py-1.5 rounded-lg text-sm font-bold">
+          <i class="fa-solid fa-laptop-code text-xs"></i>
+          Junior Frontend Developer (Angular)
+        </div>
+      </div>
+
+      <p [ngClass]="subTextClass()" class="text-base sm:text-lg max-w-xl leading-relaxed transition-colors duration-300">
+        I transform ideas into <span class="text-indigo-600 dark:text-indigo-400 font-semibold">outstanding digital experiences</span>. 
+        Specializing in building modern, high-performance web applications using the latest web technologies.
+      </p>
+
+      <div class="flex flex-wrap items-center gap-4 pt-2">
+        <a href="#projects" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-6 py-3 rounded-xl shadow-lg shadow-indigo-600/20 transition-all hover:-translate-y-0.5">
+          Explore My Work
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+        <a href="#contact" [ngClass]="isDarkMode() ? 'bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white' : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-slate-900 shadow-sm'" class="inline-flex items-center gap-2 border font-medium px-6 py-3 rounded-xl transition-all hover:-translate-y-0.5 duration-300">
+          Contact Me
+          <i class="fa-solid fa-paper-plane text-xs"></i>
+        </a>
+      </div>
+
+      <div [ngClass]="isDarkMode() ? 'border-slate-900' : 'border-slate-200'" class="pt-6 w-full border-t transition-colors duration-300">
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Tech Stack</p>
+        <div class="flex flex-wrap gap-2.5">
+          <span [ngClass]="badgeClass()" class="inline-flex items-center gap-1.5 border px-3 py-1.5 rounded-lg text-xs font-medium transition-colors duration-300">
+            <i class="fa-brands fa-angular text-red-500"></i> Angular 21
+          </span>
+          <span [ngClass]="badgeClass()" class="inline-flex items-center gap-1.5 border px-3 py-1.5 rounded-lg text-xs font-medium transition-colors duration-300">
+            <i class="fa-solid fa-wind text-cyan-400"></i> Tailwind CSS
+          </span>
+          <span [ngClass]="badgeClass()" class="inline-flex items-center gap-1.5 border px-3 py-1.5 rounded-lg text-xs font-medium transition-colors duration-300">
+            <i class="fa-solid fa-code text-blue-500"></i> TypeScript
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
