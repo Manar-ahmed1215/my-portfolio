@@ -71,6 +71,11 @@
           class="block py-1 px-1 border-b-2 border-transparent transition-all">Projects</a>
       </li>
       <li class="w-full md:w-auto">
+        <a href="#experience" (click)="isMenuOpen.set(false)" [class.text-indigo-600]="activeSection() === 'experience'"
+          [class.border-indigo-500]="activeSection() === 'experience'"
+          class="block py-1 px-1 border-b-2 border-transparent transition-all">Experience</a>
+      </li>
+      <li class="w-full md:w-auto">
         <a href="#contact" (click)="isMenuOpen.set(false)" [class.text-indigo-600]="activeSection() === 'contact'"
           [class.border-indigo-500]="activeSection() === 'contact'"
           class="block py-1 px-1 border-b-2 border-transparent transition-all">Contact</a>

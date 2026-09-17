@@ -29,22 +29,19 @@
             <p class="text-slate-500 mb-2">// Passionate about crafting pixel-perfect web apps</p>
             <p><span class="text-pink-500">const </span> <span class="text-blue-400">manarAhmed</span> = &#123;</p>
             <div class="pl-6 space-y-1">
-              <p><span class="text-cyan-400">role</span>: <span class="text-amber-300">"Junior Frontend
-                  Developer"</span>,</p>
-              <p><span class="text-cyan-400">frameworkFocus</span>: <span class="text-red-400">"Angular 21"</span>,</p>
-              <p><span class="text-cyan-400">education</span>: <span class="text-amber-300">"Computers & AI Student (3rd
-                  Year)"</span>,</p>
-              <p><span class="text-cyan-400">location</span>: <span class="text-amber-300">"Faiyum, Egypt"</span>,</p>
+              <p><span class="text-cyan-400">role</span>: <span class="text-amber-300">"Junior Frontend Developer"</span>,</p>
+              <p><span class="text-cyan-400">frameworkFocus</span>: <span class="text-red-400">"Angular (v17+)"</span>,</p>
+              <p><span class="text-cyan-400">education</span>: <span class="text-amber-300">"Computers & AI Student (3rd Year)"</span>,</p>
+              <p><span class="text-cyan-400">location</span>: <span class="text-amber-300">"Beni Suef, Egypt"</span>,</p>
               <p><span class="text-cyan-400">skills</span>: [</p>
               <div class="pl-6 text-emerald-400">
                 <p>"Angular & TypeScript",</p>
-                <p>"Tailwind CSS & Flowbite",</p>
-                <p>"REST APIs Integration",</p>
-                <p>"Responsive UI/UX Design"</p>
+                <p>"RxJS & Transloco",</p>
+                <p>"Tailwind CSS & Bootstrap",</p>
+                <p>"REST APIs & SSR"</p>
               </div>
               <p class="pl-0">],</p>
-              <p><span class="text-cyan-400">availableForInternships</span>: <span class="text-orange-400">true</span>,
-              </p>
+              <p><span class="text-cyan-400">expandingTo</span>: <span class="text-amber-300">".NET Full Stack"</span>,</p>
               <p><span class="text-cyan-400">hireable</span>: <span class="text-orange-400">true</span></p>
             </div>
             <p>&#125;;</p>
@@ -58,8 +55,8 @@
             <p class="text-xs text-slate-400 mt-1">Total Projects</p>
           </div>
           <div [ngClass]="statCardClass()" class="p-4 border rounded-xl text-center transition-all duration-300">
-            <h4 class="text-xl sm:text-2xl font-extrabold text-indigo-500">2</h4>
-            <p class="text-xs text-slate-400 mt-1">Tech Internships</p>
+            <h4 class="text-xl sm:text-2xl font-extrabold text-indigo-500">2+</h4>
+            <p class="text-xs text-slate-400 mt-1">Trainee Roles</p>
           </div>
           <div [ngClass]="statCardClass()" class="p-4 border rounded-xl text-center transition-all duration-300">
             <h4 class="text-xl sm:text-2xl font-extrabold text-indigo-500">+3</h4>
@@ -72,17 +69,16 @@
             class="w-10 h-10 border rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1">
             <i class="fa-brands fa-github text-lg"></i>
           </a>
-          <a href="https://www.linkedin.com/in/manar-ahmed4544/" target="_blank" [ngClass]="socialIconClass()"
+          <a href="https://www.linkedin.com/in/manarahmedashour" target="_blank" [ngClass]="socialIconClass()"
             class="w-10 h-10 border rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1">
             <i class="fa-brands fa-linkedin-in text-lg text-blue-500"></i>
           </a>
           <div (click)="openGmail()">
             <a [ngClass]="socialIconClass()"
-              class="w-10 h-10 border rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1">
+              class="w-10 h-10 border rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1 cursor-pointer">
               <i class="fa-solid fa-envelope text-lg text-red-400"></i>
             </a>
           </div>
-
         </div>
 
       </div>
@@ -92,14 +88,10 @@
           Transforming Ideas Into <span class="text-indigo-500">Digital Reality</span>
         </h3>
         <p [ngClass]="textMuted()" class="text-base leading-relaxed transition-colors duration-300">
-          I am a third-year Artificial Intelligence student who fell in love with Frontend Development. I combine
-          logical thinking with creative UI/UX implementations using <span
-            class="text-indigo-500 font-semibold">Angular</span> and <span
-            class="text-indigo-500 font-semibold">Tailwind CSS</span> to deliver highly responsive and beautifully
-          structured web applications.
+          I am a third-year Artificial Intelligence student dedicated to building responsive, scalable, and user-friendly web applications using <span class="text-indigo-500 font-semibold">Angular (v17+)</span>, <span class="text-indigo-500 font-semibold">TypeScript</span>, and <span class="text-indigo-500 font-semibold">RxJS</span>. I focus on developing modular component-based architectures and integrating RESTful APIs for optimal performance, while expanding my software engineering expertise into full-stack development with .NET technologies.
         </p>
 
-        <div class="  pt-2">
+        <div class="pt-2">
           <div [ngClass]="cardClass()"
             class="p-4 border rounded-xl flex items-start gap-3 transition-colors duration-300">
             <div class="bg-indigo-500/10 text-indigo-500 p-2.5 rounded-lg">
@@ -107,47 +99,41 @@
             </div>
             <div>
               <h4 class="font-bold text-sm">Education</h4>
-              <p class="text-xs text-slate-500 mt-0.5">Faculty of Computers & AI</p>
+              <p class="text-xs text-slate-500 mt-0.5">Faculty of Computers & Artificial Intelligence - Beni Suef National University</p>
             </div>
           </div>
-
         </div>
 
         <div [ngClass]="cardClass()" class="p-6 border rounded-2xl transition-colors duration-300">
           <h4 class="font-bold text-base flex items-center gap-2 mb-4">
             <i class="fa-solid fa-rocket text-indigo-500 text-sm animate-pulse"></i>
-            My Services & Process
+            My Services & Technical Focus
           </h4>
           <ul class="space-y-4 text-sm" [ngClass]="textMuted()">
 
             <li class="flex items-start gap-2.5">
               <i class="fa-solid fa-circle-check text-indigo-500 text-xs mt-1"></i>
-              <span>Developing high-performance full-stack web applications utilizing <strong>SPAs, SSR, and
-                  CSR</strong> architectures with Angular.</span>
+              <span>Developing scalable frontend applications utilizing <strong>SPAs, SSR, and Transloco</strong> for multi-language support.</span>
             </li>
 
             <li class="flex items-start gap-2.5">
               <i class="fa-solid fa-circle-check text-indigo-500 text-xs mt-1"></i>
-              <span>Building modular, highly <strong>Reusable Components</strong> to ensure a clean, scaleable, and
-                easily maintainable codebase.</span>
+              <span>Building modular, highly <strong>Reusable Components</strong> ensuring a clean and maintainable Angular architecture.</span>
             </li>
 
             <li class="flex items-start gap-2.5">
               <i class="fa-solid fa-circle-check text-indigo-500 text-xs mt-1"></i>
-              <span>Utilizing modern <strong>Angular Signals</strong> for reactive and optimized local state
-                management.</span>
+              <span>Managing reactive state streams and asynchronous data flow efficiently with <strong>RxJS</strong>.</span>
             </li>
 
             <li class="flex items-start gap-2.5">
               <i class="fa-solid fa-circle-check text-indigo-500 text-xs mt-1"></i>
-              <span>Crafting pixel-perfect, fully responsive user interfaces using advanced CSS frameworks like
-                <strong>Tailwind CSS and Bootstrap</strong>.</span>
+              <span>Crafting responsive user interfaces using modern CSS tools like <strong>Tailwind CSS, Bootstrap, and Flowbite</strong>.</span>
             </li>
 
             <li class="flex items-start gap-2.5">
               <i class="fa-solid fa-circle-check text-indigo-500 text-xs mt-1"></i>
-              <span>Seamless <strong>RESTful API integration</strong> using HttpClient, employing HTTP Interceptors for
-                secure token handling and RxJS for reactive streams and global error catching.</span>
+              <span>Seamless <strong>RESTful API integration</strong> with HttpClient, HTTP Interceptors, and robust client-side validation.</span>
             </li>
 
           </ul>
