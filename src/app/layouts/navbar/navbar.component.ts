@@ -15,34 +15,42 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
   isMenuOpen = signal<boolean>(false);
   private observer: IntersectionObserver | undefined;
 
- ngAfterViewInit() {
-  
-  const options = { 
-    root: null, 
-    rootMargin: '-10% 0px -10% 0px',
-    threshold: 0.1 
-  };
+  ngAfterViewInit() {
+    // خط الرؤية المستهدف في شاشة المستخدم (شريط بعرض 10% في منتصف الشاشة تقريباً)
+    const options = { 
+      root: null, 
+      rootMargin: '-20% 0px -60% 0px', 
+      threshold: 0 
+    };
 
-  this.observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        this.activeSection.set(entry.target.id);
-      }
-    });
-  }, options);
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.activeSection.set(entry.target.id);
+        }
+      });
+    }, options);
 
-  ['home', 'about', 'skills', 'projects', 'experience', 'contact'].forEach(id => {
-    const element = document.getElementById(id);
-    if (element) this.observer?.observe(element);
-  });
-}
+    const sections = ['home', 'about', 'skills', 'projects', 'education', 'experience', 'contact'];
+    
+    // تأخير بسيط للتأكد من انقضاء الـ Rendering كاملاً للسكاشن في الـ DOM
+    setTimeout(() => {
+      sections.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) this.observer?.observe(element);
+      });
+    }, 100);
+  }
 
-  ngOnDestroy() { this.observer?.disconnect(); }
+  ngOnDestroy() { 
+    this.observer?.disconnect(); 
+  }
 
   toggleDarkMode() { 
     this.toggleDarkModeEmit.emit(); 
   }
+  
   toggleMenu() {
-  this.isMenuOpen.update(value => !value);
-}
+    this.isMenuOpen.update(value => !value);
+  }
 }

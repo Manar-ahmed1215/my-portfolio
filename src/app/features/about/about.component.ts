@@ -21,7 +21,6 @@ export class AboutComponent {
     this.isDarkMode() ? 'bg-slate-900/50 border-slate-800 text-slate-300' : 'bg-white border-slate-200 text-slate-700 shadow-sm'
   );
 
-
   statCardClass = computed(() => 
     this.isDarkMode() 
       ? 'bg-slate-900/40 border-slate-800/80 hover:border-indigo-500/50' 
@@ -33,9 +32,10 @@ export class AboutComponent {
       ? 'bg-slate-900/60 border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800' 
       : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-100 shadow-sm'
   );
-   openGmail() {
-  const email = 'mmony4544@gmail.com';
-  const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
-  window.open(url, '_blank');
-}
+
+  openGmail() {
+    const email = 'mmony4544@gmail.com';
+    const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+    window.open(url, '_blank');
+  }
 }

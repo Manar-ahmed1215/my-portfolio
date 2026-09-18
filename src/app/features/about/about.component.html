@@ -12,7 +12,8 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-      <div class="lg:col-span-6 w-full flex flex-col space-y-6">
+      <!-- Left Column: Code Window & Quick Stats -->
+      <div class="lg:col-span-5 w-full flex flex-col space-y-6">
 
         <div class="rounded-2xl overflow-hidden border shadow-2xl transition-all duration-300" [ngClass]="editorBg()">
           <div class="flex items-center justify-between px-4 py-3 border-b" [ngClass]="editorHeader()">
@@ -26,19 +27,18 @@
           </div>
 
           <div class="p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto text-slate-300">
-            <p class="text-slate-500 mb-2">// Passionate about crafting pixel-perfect web apps</p>
+            <p class="text-slate-500 mb-2">// Crafting high-performance modern web apps</p>
             <p><span class="text-pink-500">const </span> <span class="text-blue-400">manarAhmed</span> = &#123;</p>
             <div class="pl-6 space-y-1">
-              <p><span class="text-cyan-400">role</span>: <span class="text-amber-300">"Junior Frontend Developer"</span>,</p>
-              <p><span class="text-cyan-400">frameworkFocus</span>: <span class="text-red-400">"Angular (v17+)"</span>,</p>
-              <p><span class="text-cyan-400">education</span>: <span class="text-amber-300">"Computers & AI Student (3rd Year)"</span>,</p>
-              <p><span class="text-cyan-400">location</span>: <span class="text-amber-300">"Beni Suef, Egypt"</span>,</p>
-              <p><span class="text-cyan-400">skills</span>: [</p>
+              <p><span class="text-cyan-400">role</span>: <span class="text-amber-300">"Frontend Web Developer"</span>,</p>
+              <p><span class="text-cyan-400">coreStack</span>: <span class="text-red-400">"Angular (v18+) & TypeScript"</span>,</p>
+              <p><span class="text-cyan-400">location</span>: <span class="text-amber-300">"Egypt"</span>,</p>
+              <p><span class="text-cyan-400">specialization</span>: [</p>
               <div class="pl-6 text-emerald-400">
-                <p>"Angular & TypeScript",</p>
-                <p>"RxJS & Transloco",</p>
-                <p>"Tailwind CSS & Bootstrap",</p>
-                <p>"REST APIs & SSR"</p>
+                <p>"Modular Architecture",</p>
+                <p>"RxJS State Management",</p>
+                <p>"Responsive UI (Tailwind)",</p>
+                <p>"RESTful API Integration"</p>
               </div>
               <p class="pl-0">],</p>
               <p><span class="text-cyan-400">expandingTo</span>: <span class="text-amber-300">".NET Full Stack"</span>,</p>
@@ -49,21 +49,19 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-4">
+        <!-- Stat Cards -->
+        <div class="grid grid-cols-2 gap-4">
           <div [ngClass]="statCardClass()" class="p-4 border rounded-xl text-center transition-all duration-300">
-            <h4 class="text-xl sm:text-2xl font-extrabold text-indigo-500">+10</h4>
-            <p class="text-xs text-slate-400 mt-1">Total Projects</p>
+            <h4 class="text-2xl font-extrabold text-indigo-500">+10</h4>
+            <p class="text-xs text-slate-400 mt-1 font-medium">Completed Projects</p>
           </div>
           <div [ngClass]="statCardClass()" class="p-4 border rounded-xl text-center transition-all duration-300">
-            <h4 class="text-xl sm:text-2xl font-extrabold text-indigo-500">2+</h4>
-            <p class="text-xs text-slate-400 mt-1">Trainee Roles</p>
-          </div>
-          <div [ngClass]="statCardClass()" class="p-4 border rounded-xl text-center transition-all duration-300">
-            <h4 class="text-xl sm:text-2xl font-extrabold text-indigo-500">+3</h4>
-            <p class="text-xs text-slate-400 mt-1">Years of Study</p>
+            <h4 class="text-2xl font-extrabold text-indigo-500">2+</h4>
+            <p class="text-xs text-slate-400 mt-1 font-medium">Trainee & Internship Roles</p>
           </div>
         </div>
 
+        <!-- Social Connections -->
         <div class="flex items-center gap-3 pt-1">
           <a href="https://github.com/Manar-ahmed1215" target="_blank" [ngClass]="socialIconClass()"
             class="w-10 h-10 border rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1">
@@ -83,61 +81,44 @@
 
       </div>
 
-      <div class="lg:col-span-6 flex flex-col space-y-6">
-        <h3 class="text-2xl font-bold tracking-tight">
-          Transforming Ideas Into <span class="text-indigo-500">Digital Reality</span>
-        </h3>
-        <p [ngClass]="textMuted()" class="text-base leading-relaxed transition-colors duration-300">
-          I am a third-year Artificial Intelligence student dedicated to building responsive, scalable, and user-friendly web applications using <span class="text-indigo-500 font-semibold">Angular (v17+)</span>, <span class="text-indigo-500 font-semibold">TypeScript</span>, and <span class="text-indigo-500 font-semibold">RxJS</span>. I focus on developing modular component-based architectures and integrating RESTful APIs for optimal performance, while expanding my software engineering expertise into full-stack development with .NET technologies.
+      <!-- Right Column: Narrative, USP & Call To Action -->
+      <div class="lg:col-span-7 flex flex-col space-y-6">
+        
+        <div>
+          <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+            Frontend Developer Specializing in <span class="text-indigo-500">Angular & Modern Web Architecture</span>
+          </h3>
+          
+          <p [ngClass]="textMuted()" class="text-base sm:text-lg leading-relaxed font-medium transition-colors duration-300">
+            I focus on developing modular, scalable, and high-performance web applications, leveraging the power of <span class="text-indigo-500 font-semibold">Angular</span>, <span class="text-indigo-500 font-semibold">TypeScript</span>, and reactive programming with <span class="text-indigo-500 font-semibold">RxJS</span>.
+          </p>
+        </div>
+
+        <!-- Unique Selling Proposition (USP) Card - Updated -->
+        <div [ngClass]="cardClass()" class="p-5 border rounded-xl relative overflow-hidden transition-colors duration-300 border-l-4 border-l-indigo-500">
+          <h4 class="font-bold text-sm text-indigo-500 uppercase tracking-wider mb-2 flex items-center gap-2">
+            <i class="fa-solid fa-star text-xs"></i>
+            My Unique Value Proposition (USP)
+          </h4>
+          <p class="text-sm leading-relaxed" [ngClass]="textMuted()">
+            I don't just write code; I engineer digital experiences. By merging a deep analytical mindset from Artificial Intelligence with sharp frontend expertise, I transform complex architectural logic into high-performing, intuitive, and lightning-fast user interfaces. Dedicated to writing clean, maintainable code, building modular components, and seamlessly integrating REST APIs to turn bold ideas into flawless web applications.
+          </p>
+        </div>
+
+        <!-- Secondary Detail Paragraph -->
+        <p [ngClass]="textMuted()" class="text-sm sm:text-base leading-relaxed transition-colors duration-300">
+          Currently, I am actively broadening my software engineering scope into full-stack development using <strong>C# and .NET Core</strong>, enabling me to build end-to-end web applications with robust backends and dynamic frontends.
         </p>
 
-        <div class="pt-2">
-          <div [ngClass]="cardClass()"
-            class="p-4 border rounded-xl flex items-start gap-3 transition-colors duration-300">
-            <div class="bg-indigo-500/10 text-indigo-500 p-2.5 rounded-lg">
-              <i class="fa-solid fa-graduation-cap text-lg"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-sm">Education</h4>
-              <p class="text-xs text-slate-500 mt-0.5">Faculty of Computers & Artificial Intelligence - Beni Suef National University</p>
-            </div>
-          </div>
+        <!-- Call To Action (CTA) Button -->
+        <div class="pt-4 flex items-center gap-4">
+          <a href="#contact"
+            class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm py-3.5 px-7 rounded-xl shadow-lg shadow-indigo-600/25 transition-all duration-300 hover:-translate-y-0.5 active:scale-95">
+            <span>Let's Build Something Together</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
         </div>
 
-        <div [ngClass]="cardClass()" class="p-6 border rounded-2xl transition-colors duration-300">
-          <h4 class="font-bold text-base flex items-center gap-2 mb-4">
-            <i class="fa-solid fa-rocket text-indigo-500 text-sm animate-pulse"></i>
-            My Services & Technical Focus
-          </h4>
-          <ul class="space-y-4 text-sm" [ngClass]="textMuted()">
-
-            <li class="flex items-start gap-2.5">
-              <i class="fa-solid fa-circle-check text-indigo-500 text-xs mt-1"></i>
-              <span>Developing scalable frontend applications utilizing <strong>SPAs, SSR, and Transloco</strong> for multi-language support.</span>
-            </li>
-
-            <li class="flex items-start gap-2.5">
-              <i class="fa-solid fa-circle-check text-indigo-500 text-xs mt-1"></i>
-              <span>Building modular, highly <strong>Reusable Components</strong> ensuring a clean and maintainable Angular architecture.</span>
-            </li>
-
-            <li class="flex items-start gap-2.5">
-              <i class="fa-solid fa-circle-check text-indigo-500 text-xs mt-1"></i>
-              <span>Managing reactive state streams and asynchronous data flow efficiently with <strong>RxJS</strong>.</span>
-            </li>
-
-            <li class="flex items-start gap-2.5">
-              <i class="fa-solid fa-circle-check text-indigo-500 text-xs mt-1"></i>
-              <span>Crafting responsive user interfaces using modern CSS tools like <strong>Tailwind CSS, Bootstrap, and Flowbite</strong>.</span>
-            </li>
-
-            <li class="flex items-start gap-2.5">
-              <i class="fa-solid fa-circle-check text-indigo-500 text-xs mt-1"></i>
-              <span>Seamless <strong>RESTful API integration</strong> with HttpClient, HTTP Interceptors, and robust client-side validation.</span>
-            </li>
-
-          </ul>
-        </div>
       </div>
 
     </div>

@@ -1,44 +1,129 @@
 <section id="contact" [ngClass]="bgClass()" class="py-20 px-6 transition-colors duration-500">
 
   <div class="max-w-4xl mx-auto text-center">
-    <h2 [ngClass]="titleClass()" class="text-4xl font-bold mb-8 transition-colors relative">GET IN TOUCH
+    <h2 [ngClass]="titleClass()" class="text-4xl font-bold mb-8 transition-colors relative inline-block">
+      GET IN TOUCH
       <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 h-1 bg-indigo-500 rounded-full mt-1"></span>
     </h2>
 
-    <p [ngClass]="textMuted()" class="mb-12 transition-colors">I'm always open to new opportunities and collaborations.
-      Let's build something great!</p>
+    <p [ngClass]="textMuted()" class="mb-12 transition-colors">
+      I'm always open to new opportunities and collaborations. Let's build something great!
+    </p>
 
+    <!-- Main Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
 
+      <!-- Email Card -->
       <div (click)="openGmail()" [ngClass]="cardClass()"
         class="cursor-pointer p-8 rounded-3xl border hover:border-indigo-500 transition-all duration-300 group text-left relative overflow-hidden shadow-sm hover:shadow-xl hover:shadow-indigo-500/5">
-
         <span
           class="absolute left-0 top-0 h-0 w-[3px] bg-gradient-to-b from-indigo-500 to-purple-500 transition-all duration-500 ease-out group-hover:h-full shadow-[0_0_12px_rgba(99,102,241,0.6)]"></span>
         <i
           class="fa-solid fa-envelope text-indigo-500 text-3xl mb-4 transition-all duration-300 group-hover:scale-110 group-hover:text-purple-400 group-hover:drop-shadow-[0_0_6px_rgba(168,85,247,0.5)]"></i>
-        <h3 [ngClass]="titleClass()" class="font-bold text-xl">Email </h3>
-        <p class="text-slate-500">mmony4544@gmail.com</p>
+        <h3 [ngClass]="titleClass()" class="font-bold text-xl">Email</h3>
+        <p class="text-slate-500">manarahmedashour.dev@gmail.com</p>
       </div>
 
+      <!-- LinkedIn Card -->
       <a href="https://www.linkedin.com/in/manarahmedashour" target="_blank" [ngClass]="cardClass()"
         class="block p-8 rounded-3xl border hover:border-indigo-500 transition-all duration-300 group text-left relative overflow-hidden shadow-sm hover:shadow-xl hover:shadow-indigo-500/5">
-
         <span
           class="absolute right-0 top-0 h-0 w-[3px] bg-gradient-to-b from-indigo-500 to-pink-500 transition-all duration-500 ease-out group-hover:h-full shadow-[0_0_12px_rgba(99,102,241,0.6)]"></span>
         <i
           class="fa-brands fa-linkedin text-indigo-500 text-3xl mb-4 transition-all duration-300 group-hover:scale-110 group-hover:text-pink-400 group-hover:drop-shadow-[0_0_6px_rgba(244,63,94,0.5)]"></i>
-        <h3 [ngClass]="titleClass()" class="font-bold text-xl">LinkedIn </h3>
-        <p class="text-slate-500">Let's connect!</p>
+        <h3 [ngClass]="titleClass()" class="font-bold text-xl">LinkedIn</h3>
+        <p class="text-slate-500">Let's connect professionally!</p>
+      </a>
+
+    </div>
+
+    <!-- Contact Form Section -->
+    <div [ngClass]="cardClass()" class="p-8 rounded-3xl border text-left shadow-lg mb-12">
+      <h3 [ngClass]="titleClass()" class="text-2xl font-bold mb-6 text-center">Send Me a Message</h3>
+
+      <!-- Success Alert -->
+      @if (submitStatus === 'success') {
+        <div class="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm flex items-center gap-3">
+          <i class="fa-solid fa-circle-check text-lg"></i>
+          <span>Thank you! Your message has been sent successfully. I will get back to you soon.</span>
+        </div>
+      }
+
+      <!-- Error Alert -->
+      @if (submitStatus === 'error') {
+        <div class="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-sm flex items-center gap-3">
+          <i class="fa-solid fa-circle-exclamation text-lg"></i>
+          <span>Something went wrong. Please try again or send a direct email.</span>
+        </div>
+      }
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+        <!-- Name -->
+        <div>
+          <label [ngClass]="titleClass()" class="block text-sm font-medium mb-2">Your Name</label>
+          <input type="text" formControlName="name" placeholder="John Doe"
+            [ngClass]="inputClass()"
+            class="w-full px-4 py-3 rounded-xl border outline-none transition-colors" />
+          @if (contactForm.get('name')?.touched && contactForm.get('name')?.invalid) {
+            <p class="text-rose-500 text-xs mt-1">Please enter your name.</p>
+          }
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label [ngClass]="titleClass()" class="block text-sm font-medium mb-2">Your Email</label>
+          <input type="email" formControlName="email" placeholder="john@example.com"
+            [ngClass]="inputClass()"
+            class="w-full px-4 py-3 rounded-xl border outline-none transition-colors" />
+          @if (contactForm.get('email')?.touched && contactForm.get('email')?.invalid) {
+            <p class="text-rose-500 text-xs mt-1">Please enter a valid email address.</p>
+          }
+        </div>
+
+        <!-- Subject -->
+        <div>
+          <label [ngClass]="titleClass()" class="block text-sm font-medium mb-2">Subject</label>
+          <input type="text" formControlName="subject" placeholder="Project Opportunity / Inquiry"
+            [ngClass]="inputClass()"
+            class="w-full px-4 py-3 rounded-xl border outline-none transition-colors" />
+          @if (contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid) {
+            <p class="text-rose-500 text-xs mt-1">Subject is required.</p>
+          }
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label [ngClass]="titleClass()" class="block text-sm font-medium mb-2">Message</label>
+          <textarea formControlName="message" rows="4" placeholder="Write your message here..."
+            [ngClass]="inputClass()"
+            class="w-full px-4 py-3 rounded-xl border outline-none transition-colors resize-none"></textarea>
+          @if (contactForm.get('message')?.touched && contactForm.get('message')?.invalid) {
+            <p class="text-rose-500 text-xs mt-1">Message must be at least 10 characters long.</p>
+          }
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" [disabled]="contactForm.invalid || isSubmitting"
+          class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold hover:opacity-90 transition-all duration-300 shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer">
+          @if (!isSubmitting) {
+            <span>Send Message</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          } @else {
+            <i class="fa-solid fa-circle-notch animate-spin"></i>
+            <span>Sending...</span>
+          }
+        </button>
+      </form>
+    </div>
+
+    <!-- GitHub Footer Link -->
+    <div class="mt-8">
+      <p [ngClass]="textMuted()" class="mb-4">Explore my repositories on</p>
+      <a href="https://github.com/Manar-ahmed1215" target="_blank"
+        class="inline-flex items-center gap-2 text-indigo-500 hover:text-indigo-400 font-bold text-xl transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)]">
+        <i class="fa-brands fa-github text-2xl"></i> GitHub Profile
       </a>
     </div>
 
-    <div class="mt-8">
-      <p [ngClass]="textMuted()" class="mb-4">You can also find my code on</p>
-      <a href="https://github.com/Manar-ahmed1215" target="_blank"
-        class="inline-flex items-center gap-2 text-indigo-500 hover:text-indigo-400 font-bold text-xl transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)] animate-pulse">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-    </div>
   </div>
 </section>
