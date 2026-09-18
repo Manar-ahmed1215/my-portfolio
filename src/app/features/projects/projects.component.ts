@@ -1,4 +1,4 @@
-import { Component, signal, computed, input } from '@angular/core';
+import { Component, signal, computed, input, AfterViewInit, ElementRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from '../../core/models/project.interface';
 
@@ -8,7 +8,9 @@ import { Project } from '../../core/models/project.interface';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements AfterViewInit {
+  private el = inject(ElementRef);
+
   isDarkMode = input<boolean>(true);
   projects = signal<Project[]>([
     { title: 'FreshCart E-Commerce', desc: 'Complete e-commerce platform with safe payment.', tags: ['Angular21', 'SSR', 'Tailwind'], category: 'Website', previewImage: 'assets/ecommerce.jpg', githubLink: 'https://github.com/Manar-ahmed1215/E-commerce', previewLink: 'https://ecommerccccce.netlify.app' },
@@ -36,6 +38,26 @@ export class ProjectsComponent {
 
   setFilter(category: string) {
     this.filter.set(category);
+    setTimeout(() => this.observeCards(), 30);
   }
-  
+
+  ngAfterViewInit() {
+    this.observeCards();
+  }
+
+  private observeCards() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('mobile-show');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    const cards = this.el.nativeElement.querySelectorAll('.mobile-card');
+    cards.forEach((card: HTMLElement) => observer.observe(card));
+  }
 }

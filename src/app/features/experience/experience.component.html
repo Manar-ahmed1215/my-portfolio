@@ -1,25 +1,33 @@
-<section id="experience" [ngClass]="bgClass()" class="py-20 px-6 transition-colors duration-500">
+<section id="experience" [ngClass]="bgClass()" class="py-20 px-6 transition-colors duration-500 overflow-hidden">
   <div class="max-w-7xl mx-auto">
     
-    <div class="text-center mb-16">
+    <!-- Title -->
+    <div class="text-center mb-16 reveal">
       <h2 [ngClass]="titleClass()" class="text-3xl sm:text-4xl font-extrabold tracking-tight relative inline-block">
         Work Experience & Internships
-        <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 h-1 bg-indigo-500 rounded-full mt-1"></span>
+        <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 h-1 bg-indigo-500 rounded-full mt-1 shadow-[0_0_12px_rgba(99,102,241,0.6)]"></span>
       </h2>
     </div>
 
+    <!-- Timeline Container -->
     <div class="max-w-4xl mx-auto relative border-l-2 border-indigo-500/30 pl-6 sm:pl-8 space-y-12">
       
-      <!-- Netpoint -->
-      <div class="relative group">
-        <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-900 shadow-[0_0_10px_rgba(99,102,241,0.8)]"></span>
-        <div [ngClass]="cardClass()" class="p-6 sm:p-8 rounded-3xl border transition-all duration-300 hover:border-indigo-500">
+      <!-- Card 1 -->
+      <div class="relative group reveal delay-1">
+        <span class="absolute -left-[31px] sm:-left-[39px] top-2 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-900 shadow-[0_0_10px_rgba(99,102,241,0.8)] transition-all duration-300 group-hover:scale-150 group-hover:bg-indigo-400 group-hover:shadow-[0_0_20px_rgba(99,102,241,1)]"></span>
+        
+        <div [ngClass]="cardClass()" class="p-6 sm:p-8 rounded-3xl border transition-all duration-300 hover:border-indigo-500/80 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-indigo-500/10 cursor-pointer">
           <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <h3 [ngClass]="titleClass()" class="text-xl font-bold">Angular Frontend Developer Trainee</h3>
-            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 text-xs font-semibold rounded-full">July 2026</span>
+            <h3 [ngClass]="titleClass()" class="text-xl font-bold flex items-center gap-2">
+              <i class="fa-solid fa-briefcase text-indigo-500 text-sm transition-transform duration-300 group-hover:rotate-12"></i>
+              Angular Frontend Developer Trainee
+            </h3>
+            <span class="px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold rounded-full group-hover:bg-indigo-500 group-hover:text-white transition-colors duration-300">July 2026</span>
           </div>
-          <p class="text-indigo-500 font-medium text-sm mb-4">Netpoint</p>
-          <ul class="space-y-2 text-sm text-slate-400 list-disc list-inside leading-relaxed">
+          <p class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm mb-4 flex items-center gap-1.5">
+            <span>Netpoint</span>
+          </p>
+          <ul [ngClass]="textMuted()" class="space-y-2.5 text-sm list-disc list-inside leading-relaxed">
             <li>Developing and maintaining dynamic user interfaces using Angular, TypeScript, RxJS, and modern UI frameworks.</li>
             <li>Collaborating on modular, component-based architectures and integrating RESTful APIs for real-time data flow.</li>
             <li>Applying frontend performance optimization techniques and clean code practices.</li>
@@ -27,49 +35,61 @@
         </div>
       </div>
 
-      <!-- DEPI -->
-      <div class="relative group">
-        <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-900 shadow-[0_0_10px_rgba(99,102,241,0.8)]"></span>
-        <div [ngClass]="cardClass()" class="p-6 sm:p-8 rounded-3xl border transition-all duration-300 hover:border-indigo-500">
+      <!-- Card 2 -->
+      <div class="relative group reveal delay-2">
+        <span class="absolute -left-[31px] sm:-left-[39px] top-2 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-900 shadow-[0_0_10px_rgba(99,102,241,0.8)] transition-all duration-300 group-hover:scale-150 group-hover:bg-indigo-400 group-hover:shadow-[0_0_20px_rgba(99,102,241,1)]"></span>
+        
+        <div [ngClass]="cardClass()" class="p-6 sm:p-8 rounded-3xl border transition-all duration-300 hover:border-indigo-500/80 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-indigo-500/10 cursor-pointer">
           <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <h3 [ngClass]="titleClass()" class="text-xl font-bold">Full Stack .NET Developer Trainee</h3>
-            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 text-xs font-semibold rounded-full">July 2026 – Present</span>
+            <h3 [ngClass]="titleClass()" class="text-xl font-bold flex items-center gap-2">
+              <i class="fa-solid fa-code text-indigo-500 text-sm transition-transform duration-300 group-hover:rotate-12"></i>
+              Full Stack .NET Developer Trainee
+            </h3>
+            <span class="px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold rounded-full group-hover:bg-indigo-500 group-hover:text-white transition-colors duration-300">July 2026 – Present</span>
           </div>
-          <p class="text-indigo-500 font-medium text-sm mb-4">DEPI (AMIT Learning)</p>
-          <ul class="space-y-2 text-sm text-slate-400 list-disc list-inside leading-relaxed">
+          <p class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm mb-4">DEPI (AMIT Learning)</p>
+          <ul [ngClass]="textMuted()" class="space-y-2.5 text-sm list-disc list-inside leading-relaxed">
             <li>Participating in intensive hands-on training focusing on full-stack web development using C#, .NET, and SQL Server.</li>
             <li>Building object-oriented backend solutions, practicing clean architecture, and integrating database logic.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Route Academy -->
-      <div class="relative group">
-        <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-900 shadow-[0_0_10px_rgba(99,102,241,0.8)]"></span>
-        <div [ngClass]="cardClass()" class="p-6 sm:p-8 rounded-3xl border transition-all duration-300 hover:border-indigo-500">
+      <!-- Card 3 -->
+      <div class="relative group reveal delay-3">
+        <span class="absolute -left-[31px] sm:-left-[39px] top-2 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-900 shadow-[0_0_10px_rgba(99,102,241,0.8)] transition-all duration-300 group-hover:scale-150 group-hover:bg-indigo-400 group-hover:shadow-[0_0_20px_rgba(99,102,241,1)]"></span>
+        
+        <div [ngClass]="cardClass()" class="p-6 sm:p-8 rounded-3xl border transition-all duration-300 hover:border-indigo-500/80 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-indigo-500/10 cursor-pointer">
           <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <h3 [ngClass]="titleClass()" class="text-xl font-bold">Frontend Web Development Trainee</h3>
-            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 text-xs font-semibold rounded-full">2026</span>
+            <h3 [ngClass]="titleClass()" class="text-xl font-bold flex items-center gap-2">
+              <i class="fa-solid fa-graduation-cap text-indigo-500 text-sm transition-transform duration-300 group-hover:rotate-12"></i>
+              Frontend Web Development Trainee
+            </h3>
+            <span class="px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold rounded-full group-hover:bg-indigo-500 group-hover:text-white transition-colors duration-300">2026</span>
           </div>
-          <p class="text-indigo-500 font-medium text-sm mb-4">Route Academy</p>
-          <ul class="space-y-2 text-sm text-slate-400 list-disc list-inside leading-relaxed">
+          <p class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm mb-4">Route Academy</p>
+          <ul [ngClass]="textMuted()" class="space-y-2.5 text-sm list-disc list-inside leading-relaxed">
             <li>Mastered frontend development using Angular, TypeScript, RxJS, dynamic translations (Transloco), and modern UI architecture.</li>
           </ul>
         </div>
       </div>
 
-      <!-- NTI & ITI -->
-      <div class="relative group">
-        <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-900 shadow-[0_0_10px_rgba(99,102,241,0.8)]"></span>
-        <div [ngClass]="cardClass()" class="p-6 sm:p-8 rounded-3xl border transition-all duration-300 hover:border-indigo-500">
+      <!-- Card 4 -->
+      <div class="relative group reveal delay-4">
+        <span class="absolute -left-[31px] sm:-left-[39px] top-2 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-900 shadow-[0_0_10px_rgba(99,102,241,0.8)] transition-all duration-300 group-hover:scale-150 group-hover:bg-indigo-400 group-hover:shadow-[0_0_20px_rgba(99,102,241,1)]"></span>
+        
+        <div [ngClass]="cardClass()" class="p-6 sm:p-8 rounded-3xl border transition-all duration-300 hover:border-indigo-500/80 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-indigo-500/10 cursor-pointer">
           <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <h3 [ngClass]="titleClass()" class="text-xl font-bold">Summer Tech Trainings (NTI & ITI)</h3>
-            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 text-xs font-semibold rounded-full">2024 – 2025</span>
+            <h3 [ngClass]="titleClass()" class="text-xl font-bold flex items-center gap-2">
+              <i class="fa-solid fa-laptop-code text-indigo-500 text-sm transition-transform duration-300 group-hover:rotate-12"></i>
+              Summer Tech Trainings (NTI & ITI)
+            </h3>
+            <span class="px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold rounded-full group-hover:bg-indigo-500 group-hover:text-white transition-colors duration-300">2024 – 2025</span>
           </div>
-          <p class="text-indigo-500 font-medium text-sm mb-4">NTI & ITI Summer Programs</p>
-          <ul class="space-y-2 text-sm text-slate-400 list-disc list-inside leading-relaxed">
-            <li><strong>NTI (2025):</strong> Full Stack PHP Trainee – Database-driven web apps using PHP & MySQL.</li>
-            <li><strong>ITI (2024):</strong> Web Development Trainee – Foundational hands-on training in Python & Web Development.</li>
+          <p class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm mb-4">NTI & ITI Summer Programs</p>
+          <ul [ngClass]="textMuted()" class="space-y-2.5 text-sm list-disc list-inside leading-relaxed">
+            <li><strong [ngClass]="titleClass()">NTI (2025):</strong> Full Stack PHP Trainee – Database-driven web apps using PHP & MySQL.</li>
+            <li><strong [ngClass]="titleClass()">ITI (2024):</strong> Web Development Trainee – Foundational hands-on training in Python & Web Development.</li>
           </ul>
         </div>
       </div>
