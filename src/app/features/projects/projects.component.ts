@@ -13,7 +13,7 @@ export class ProjectsComponent implements AfterViewInit {
 
   isDarkMode = input<boolean>(true);
   projects = signal<Project[]>([
-    { title: 'FreshCart E-Commerce', desc: 'Complete e-commerce platform with safe payment.', tags: ['Angular21', 'SSR', 'Tailwind'], category: 'Website', previewImage: 'assets/ecommerce.jpg', githubLink: 'https://github.com/Manar-ahmed1215/E-commerce', previewLink: 'https://ecommerccccce.netlify.app' },
+    { title: 'FreshCart E-Commerce', desc: 'Complete e-commerce platform with safe payment.', tags: ['Angular21', 'SSR', 'Tailwind'], category: 'Website', previewImage: 'assets/ecommerce.jpg', githubLink: 'https://github.com/Manar-ahmed1215/E-commerce', previewLink: 'https://e-commerce-mcca.vercel.app/' },
     { title: 'Social Media Platform', desc: 'Interactive social media platform.', tags: ['Angular20', 'CSR', 'Tailwind'], category: 'Application', previewImage: 'assets/social.jpg', githubLink: 'https://github.com/Manar-ahmed1215/Social-App', previewLink: 'https://social-app-wpp8.vercel.app/#/login' },
     { title: 'Angular Journey', desc: 'My first project built with Angular.', tags: ['Angular', 'Routing'], category: 'Website', previewImage: 'assets/angular.jpg', githubLink: 'https://github.com/Manar-ahmed1215/Frist-project-in-Angular', previewLink: 'https://frist-project-in-angular.vercel.app/home' },
     { title: 'Kanban Task Manager', desc: 'Task management board.', tags: ['TypeScript', 'CRUD'], category: 'Application', previewImage: 'assets/kanban.jpg', githubLink: 'https://github.com/Manar-ahmed1215/Kanban-Board-Task-Manager', previewLink: 'https://kanban-board-task-manager-v878.vercel.app' },
